@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+sqlAlchemy
+python-dotenv
+uuid
