@@ -17,6 +17,16 @@ class UserResponse(BaseModel):
 class UserLogin(BaseModel):
     email: EmailStr
     password: str
+
+class UserLoginResponse(BaseModel):
+    id: UUID
+    name: str 
+    email: EmailStr
+    access_token: str
+    class Config:
+        from_attributes = True
+    class ConfigDict:
+        exclude = {'created_at', 'updated_at'}
     
 # class UserUpdate:
 #     name: Optional[str] = None
