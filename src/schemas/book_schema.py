@@ -1,5 +1,6 @@
 from typing import Optional
 from pydantic import BaseModel
+from uuid import UUID
 
 class bookBase(BaseModel):
     name : str
@@ -15,6 +16,7 @@ class bookUpdate(BaseModel):
     in_stock : Optional[bool] = None
     
 class bookResponse(bookBase):
-    id : int
+    id : UUID
     class Config:
-        orm_mode = True
+        from_attributes = True
+        

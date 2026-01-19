@@ -3,6 +3,7 @@ app = FastAPI()
 from sqlalchemy.orm import session
 from src.database import get_db, engine, Base
 from src.routes.book_routes import router as book_routes
+from src.routes.user_routes import router as user_routes
 
 #create all tables 
 Base.metadata.create_all(bind=engine)
@@ -12,3 +13,4 @@ def greet():
     return "welcome to bookstore curd"
 
 app.include_router(book_routes)
+app.include_router(user_routes)
